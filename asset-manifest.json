@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Caffiene-and-Code-PHICSIT/static/css/main.a1367a1e.css",
+    "main.js": "/Caffiene-and-Code-PHICSIT/static/js/main.c64c8ef3.js",
+    "static/media/PHICSIT_white_logo-removebg-preview (1).png": "/Caffiene-and-Code-PHICSIT/static/media/PHICSIT_white_logo-removebg-preview (1).6064d88207298bebc014.png",
+    "static/media/illustration-woman-online-mobile.svg": "/Caffiene-and-Code-PHICSIT/static/media/illustration-woman-online-mobile.fe928f9c476ef6d33267.svg",
+    "static/media/illustration-woman-online-desktop.svg": "/Caffiene-and-Code-PHICSIT/static/media/illustration-woman-online-desktop.843eb114c7213a596ee2.svg",
+    "static/media/third-icon.svg": "/Caffiene-and-Code-PHICSIT/static/media/third-icon.d2f8d8825fbf64e2626bc5ecce92f7f5.svg",
+    "static/media/second-icon.svg": "/Caffiene-and-Code-PHICSIT/static/media/second-icon.b7d1dec38f8fbecd88656bd409522925.svg",
+    "static/media/illustration-box-desktop.svg": "/Caffiene-and-Code-PHICSIT/static/media/illustration-box-desktop.ec1ba14b853c562a6637.svg",
+    "static/media/first-icon.svg": "/Caffiene-and-Code-PHICSIT/static/media/first-icon.b5776e457520a438fbe03443f9fd395c.svg",
+    "static/media/gggrain.svg": "/Caffiene-and-Code-PHICSIT/static/media/gggrain.aa40467a6c7ce434fa2f.svg",
+    "static/media/bg-pattern-desktop.svg": "/Caffiene-and-Code-PHICSIT/static/media/bg-pattern-desktop.f51e07a2f52390c60484.svg",
+    "index.html": "/Caffiene-and-Code-PHICSIT/index.html",
+    "static/media/icon-arrow-down.svg": "/Caffiene-and-Code-PHICSIT/static/media/icon-arrow-down.1f0754b6a30b710858cc.svg",
+    "main.a1367a1e.css.map": "/Caffiene-and-Code-PHICSIT/static/css/main.a1367a1e.css.map",
+    "main.c64c8ef3.js.map": "/Caffiene-and-Code-PHICSIT/static/js/main.c64c8ef3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1367a1e.css",
+    "static/js/main.c64c8ef3.js"
+  ]
+}
