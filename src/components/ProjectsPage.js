@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaTwitter, FaLinkedin, FaGlobe } from "react-icons/fa";
-import Lottie from "react-lottie";
-import animationData from "./loading.json";
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection } from "@firebase/firestore/lite";
 import CardSpotlightEffect from "./CardSpotlightEffect";
