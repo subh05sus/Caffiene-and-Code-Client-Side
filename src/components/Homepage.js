@@ -10,7 +10,6 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { FaDiscord, FaLinkedin } from "react-icons/fa";
 
 import { Canvas } from "@react-three/fiber";
-import { Center, OrbitControls } from "@react-three/drei";
 import ThreeD from "./threeDModel.js";
 
 const Homepage = () => {
