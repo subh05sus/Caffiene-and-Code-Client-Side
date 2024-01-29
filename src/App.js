@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Homepage from './components/Homepage';
 import ProjectsPage from './components/ProjectsPage';
 import OurTeam from './components/OurTeam';
-import LeaderBoard from './components/LeaderBoardComingSoon';
+import LeaderBoard from './components/ContributionLeaderboard';
 import NoPage from './components/NoPage';
 
 function App() {
