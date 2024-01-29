@@ -11,6 +11,7 @@ import { FaDiscord, FaLinkedin } from "react-icons/fa";
 
 import { Canvas } from "@react-three/fiber";
 import ThreeD from "./threeDModel.js";
+// import "@google/model-viewer";
 
 const Homepage = () => {
   const particlesInit = useCallback(async (engine) => {
@@ -168,14 +169,13 @@ const Homepage = () => {
 
       <section id="timeline" className="dark-section">
         <div style={{ position: "absolute", height: "900px", width: "90vw" }}>
-
-            <Canvas className="canvas">
-              <ambientLight intensity={0.05} />
-              <directionalLight position={[-2, 5, 2]} />
-              <Suspense fallback={null}>
-                <ThreeD />
-              </Suspense>
-            </Canvas>
+          <Canvas className="canvas">
+            <ambientLight intensity={0.05} />
+            <directionalLight position={[-2, 5, 2]} />
+            <Suspense fallback={null}>
+              <ThreeD />
+            </Suspense>
+          </Canvas>
         </div>
         <div className="timeline-content">
           <h2>Event Timeline</h2>
