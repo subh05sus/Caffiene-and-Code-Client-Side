@@ -71,8 +71,10 @@ async function getContributionsForUsersAndRepos(token, usernames, repoUrls) {
   }
 
   console.log(contributions);
+  localStorage.setItem("contributions", JSON.stringify(contributions));
   return contributions;
 }
+
 const ContributionLeaderboard = () => {
   const [contributions, setContributions] = useState({});
 
@@ -98,30 +100,34 @@ const ContributionLeaderboard = () => {
 
         // Check if it's the first run or a new day
         if (!firstRun || lastUpdated !== currentDate) {
-          const data = await getContributionsForUsersAndRepos(
-            githubToken,
-            usernames,
-            repoUrls
-          );
-          setContributions(data);
+          const storedContributions = localStorage.getItem("contributions");
+          if (storedContributions) {
+            const parsedContributions = JSON.parse(storedContributions);
+            setContributions(parsedContributions);
+          } else {
+            const data = await getContributionsForUsersAndRepos(
+              githubToken,
+              usernames,
+              repoUrls
+            );
+            setContributions(data);
+          }
 
           // Update firstRun and lastUpdated in localStorage
-          if(!firstRun){
-
+          if (!firstRun) {
             localStorage.setItem("firstRun", true);
-            console.log("first run done")
+            console.log("first run done");
           }
           localStorage.setItem("lastUpdated", currentDate);
-          console.log("updated on", currentDate)
-        }
-        else{
-          console.log("Already updated, wait till 12 am to update")
+          console.log("updated on", currentDate);
+        } else {
+          console.log("Already updated, wait till 12 am to update");
         }
       } catch (error) {
         console.error("Error fetching contributions:", error);
       }
     };
-    console.log(localStorage)
+    console.log(localStorage);
     fetchData();
   }, []); // Run once on component mount
 
@@ -139,10 +145,11 @@ const ContributionLeaderboard = () => {
   const topThreeUsers = usernames.slice(0, 3);
   // Extract the remaining users (excluding the top 3)
   const remainingUsers = usernames.slice(3);
+
   return (
     <div className="contribution-leaderboard-container">
       <h2>Contribution Leaderboard</h2>
-      <p>This will update everyday 12 am</p>
+      <p>This will update every day at 12 am</p>
       {/* Top 3 users */}
       <div className="top-three">
         {topThreeUsers.map((username, index) => (
