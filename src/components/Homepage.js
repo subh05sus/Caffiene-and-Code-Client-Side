@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import "./Homepage.css"; // Import your CSS file for styling
 import devfolioImage from "./assets/devfolio.png";
 import CountdownTimer from "./countdown";
@@ -13,10 +13,13 @@ import { Canvas } from "@react-three/fiber";
 import ThreeD from "./threeDModel.js";
 // import "@google/model-viewer";
 
-const Homepage = () => {
+const Homepage = ({ setProgress }) => {
+  
   const particlesInit = useCallback(async (engine) => {
+    setProgress(30);
     await loadSlim(engine);
-  }, []);
+    setProgress(100);
+  }, [setProgress]);
 
   const particlesLoaded = useCallback(async (container) => {}, []);
   return (

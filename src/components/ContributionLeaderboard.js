@@ -75,7 +75,7 @@ async function getContributionsForUsersAndRepos(token, usernames, repoUrls) {
   return contributions;
 }
 
-const ContributionLeaderboard = () => {
+const ContributionLeaderboard = ({setProgress}) => {
   const [contributions, setContributions] = useState({});
 
   const usernames = [
@@ -97,10 +97,12 @@ const ContributionLeaderboard = () => {
         const firstRun = localStorage.getItem("firstRun");
         const lastUpdated = localStorage.getItem("lastUpdated");
         const currentDate = new Date().toDateString();
-
+        
         // Check if it's the first run or a new day
         if (!firstRun || lastUpdated !== currentDate) {
+          setProgress(30)
           const storedContributions = localStorage.getItem("contributions");
+          setProgress(60)
           if (storedContributions) {
             const parsedContributions = JSON.parse(storedContributions);
             setContributions(parsedContributions);
@@ -109,10 +111,11 @@ const ContributionLeaderboard = () => {
               githubToken,
               usernames,
               repoUrls
-            );
-            setContributions(data);
-          }
-
+              );
+              setContributions(data);
+            }
+            
+            setProgress(100)
           // Update firstRun and lastUpdated in localStorage
           if (!firstRun) {
             localStorage.setItem("firstRun", true);
@@ -129,7 +132,7 @@ const ContributionLeaderboard = () => {
     };
     console.log(localStorage);
     fetchData();
-  }, []); // Run once on component mount
+  }, [githubToken, repoUrls, setProgress, usernames]); // Run once on component mount
 
   const getTotalContributions = (username) => {
     if (contributions[username]) {

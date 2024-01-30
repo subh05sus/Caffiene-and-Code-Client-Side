@@ -17,7 +17,7 @@ function App() {
       <Router>
       {<Navbar/>}
       <LoadingBar
-        color='#b2a6ff'
+        color='#005764'
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />

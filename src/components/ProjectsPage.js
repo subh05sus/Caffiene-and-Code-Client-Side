@@ -20,19 +20,21 @@ const app = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-const ProjectsPage = () => {
+const ProjectsPage = ({setProgress}) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    // Fetch projects directly from Firebase
+    setProgress(10)
     const fetchProjects = async () => {
       try {
         const projectsSnapshot = await getDocs(collection(db, "projects"));
+        setProgress(60)
         const projectsData = projectsSnapshot.docs.map((doc) => doc.data());
         setProjects(projectsData);
         setLoading(false);
+        setProgress(100)
       } catch (error) {
         console.error("Error fetching projects:", error);
         setLoading(false);
@@ -40,7 +42,7 @@ const ProjectsPage = () => {
     };
 
     fetchProjects();
-  }, []);
+  }, [setProgress]);
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
