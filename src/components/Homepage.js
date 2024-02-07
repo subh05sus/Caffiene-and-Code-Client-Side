@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import "./Homepage.css"; // Import your CSS file for styling
 import devfolioImage from "./assets/devfolio.png";
 import CountdownTimer from "./countdown";
@@ -13,13 +13,29 @@ import { Canvas } from "@react-three/fiber";
 import ThreeD from "./threeDModel.js";
 // import "@google/model-viewer";
 
+import ReactSimplyCarousel from "react-simply-carousel";
+
+import CardSpotlightEffect from "./CardSpotlightEffect";
+// ---------------mentors------------------------
+import Ankita from "./mentors/Ankita Mishra.jpg";
+import Himesh from "./mentors/Himesh Parashar.jpg";
+import Ishita from "./mentors/Ishita Raina.jpg";
+import Khushi from "./mentors/Khushi Goyal.jpg";
+import Krithik from "./mentors/Krithik D.jpg";
+import Namya from "./mentors/Namya Jain.jpg";
+import Nandani from "./mentors/Nandani Jindal.jpg";
+
 const Homepage = ({ setProgress }) => {
-  
-  const particlesInit = useCallback(async (engine) => {
-    setProgress(30);
-    await loadSlim(engine);
-    setProgress(100);
-  }, [setProgress]);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+  const particlesInit = useCallback(
+    async (engine) => {
+      setProgress(30);
+      await loadSlim(engine);
+      setProgress(100);
+    },
+    [setProgress]
+  );
 
   const particlesLoaded = useCallback(async (container) => {}, []);
   return (
@@ -269,13 +285,253 @@ const Homepage = ({ setProgress }) => {
           </p>
           <a
             className="dark-tone"
-            style={{ marginTop: "20px" }}
+            style={{ marginBottom: "20px", marginTop: "20px" }}
             href="https://caffeine-and-code.devfolio.co/"
             target="_blank"
             rel="noreferrer"
           >
             Become A Mentor
           </a>
+
+          <div style={{ marginBottom: "20px", marginTop: "20px" }}>
+            <ReactSimplyCarousel
+              activeSlideIndex={activeSlideIndex}
+              onRequestChange={setActiveSlideIndex}
+              itemsToShow={1}
+              itemsToScroll={1}
+              forwardBtnProps={{
+                style: {
+                  alignSelf: "center",
+                  background: "black",
+                  border: "none",
+                  borderRadius: "50%",
+                  color: "white",
+                  cursor: "pointer",
+                  fontSize: "20px",
+                  height: 30,
+                  lineHeight: 1,
+                  textAlign: "center",
+                  width: 30,
+                },
+                children: <span>{`>`}</span>,
+              }}
+              backwardBtnProps={{
+                //here you can also pass className, or any other button element attributes
+                style: {
+                  alignSelf: "center",
+                  background: "black",
+                  border: "none",
+                  borderRadius: "50%",
+                  color: "white",
+                  cursor: "pointer",
+                  fontSize: "20px",
+                  height: 30,
+                  lineHeight: 1,
+                  textAlign: "center",
+                  width: 30,
+                },
+                children: <span>{`<`}</span>,
+              }}
+              responsiveProps={[
+                {
+                  itemsToShow: 3,
+                  itemsToScroll: 1,
+                  minWidth: 768,
+                  infinite: true,
+                },
+              ]}
+              speed={400}
+              easing="linear"
+            >
+
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Ankita}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Ankita Mishra
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Himesh}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Himesh Parashar
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Ishita}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Ishita Raina
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+
+            
+
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Khushi}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Khushi Goyal
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Krithik}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Krithik D
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Namya}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Namya Jain
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+              <div style={{ width: 200, height: 250, padding: 10 }}>
+                <CardSpotlightEffect style={{ margin: "10px" }}>
+                  <div
+                    style={{
+                      width: 160,
+                      height: 210,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <img
+                      src={Nandani}
+                      alt=""
+                      style={{
+                        height: '100px',
+                        borderRadius:'50px'
+                      }}
+                    />
+                    Nandani Jindal
+                  </div>
+                </CardSpotlightEffect>
+              </div>
+
+            
+
+
+            </ReactSimplyCarousel>
+          </div>
         </div>
       </section>
       <section className="dark-section">
@@ -353,7 +609,7 @@ const Homepage = ({ setProgress }) => {
             <p>
               Email:{" "}
               <a
-                href="mailto:info@yourdomain.com"
+                href="mailto:info@phicsit.in"
                 style={{
                   textDecorationLine: "none",
                   color: "gray",
