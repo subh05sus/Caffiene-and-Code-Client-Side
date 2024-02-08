@@ -149,7 +149,7 @@ const ProjectsPage = ({setProgress}) => {
               <div
                 className="stack-list"
                 style={{
-                  maxWidth: "30%",
+                  maxWidth: "25%",
                 }}
               >
                 <h3>Tech Stack</h3>
