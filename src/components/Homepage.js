@@ -282,17 +282,10 @@ const Homepage = ({ setProgress }) => {
           >
             They share their knowledge and experience with aspiring developers.
           </p>
-          <a
-            className="dark-tone"
-            style={{ marginBottom: "20px", marginTop: "20px" }}
-            href="https://forms.gle/s1Emj1sncWjQm2xj7"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Become A Mentor
-          </a>
 
-        </div>
+          </div>
+
+
           <div style={{ marginBottom: "20px", marginTop: "20px" }}>
             <ReactSimplyCarousel
               activeSlideIndex={activeSlideIndex}
@@ -531,6 +524,18 @@ const Homepage = ({ setProgress }) => {
 
 
             </ReactSimplyCarousel>
+          </div>
+          <div className="socials-content">
+
+          <a
+            className="dark-tone"
+            style={{ marginBottom: "20px", marginTop: "20px" }}
+            href="https://forms.gle/s1Emj1sncWjQm2xj7"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Become A Mentor
+          </a>
           </div>
       </section>
       <section className="dark-section">
