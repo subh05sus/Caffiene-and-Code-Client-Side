@@ -61,7 +61,7 @@ const ProjectsPage = ({setProgress}) => {
         <h2 style={{ marginTop: 0 }}>Projects</h2>
         Have an open-source project you'd like to showcase? Submit your project
         details and let the community discover and contribute to your work.
-        <a href="/">
+        <a href="https://forms.gle/s1Emj1sncWjQm2xj7">
           <b>
             <span className="titleB"> Add your project</span>
           </b>
