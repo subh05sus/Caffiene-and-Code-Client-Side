@@ -474,6 +474,14 @@ body::-ms-scrollbar-track {
   border-radius: 5px;
   cursor: pointer;
 }
+.view-btn {
+  background: #bebebe;
+  color: #1f1f1f;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 .seeMoreButton {
   background-color: #111520;

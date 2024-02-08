@@ -274,25 +274,25 @@ const Homepage = ({ setProgress }) => {
       </section>
       <section className="light-section">
         <div className="socials-content">
-          <h2>Wanna become a mentor?</h2>
+          <h2>Our Mentors</h2>
           <p
             style={{
               marginBottom: "20px",
             }}
           >
-            Share your knowledge and experience with aspiring developers. Join
-            us as a mentor and help others on their open-source journey.
+            They share their knowledge and experience with aspiring developers.
           </p>
           <a
             className="dark-tone"
             style={{ marginBottom: "20px", marginTop: "20px" }}
-            href="https://caffeine-and-code.devfolio.co/"
+            href="https://forms.gle/s1Emj1sncWjQm2xj7"
             target="_blank"
             rel="noreferrer"
           >
             Become A Mentor
           </a>
 
+        </div>
           <div style={{ marginBottom: "20px", marginTop: "20px" }}>
             <ReactSimplyCarousel
               activeSlideIndex={activeSlideIndex}
@@ -334,7 +334,7 @@ const Homepage = ({ setProgress }) => {
               }}
               responsiveProps={[
                 {
-                  itemsToShow: 3,
+                  itemsToShow: 5,
                   itemsToScroll: 1,
                   minWidth: 768,
                   infinite: true,
@@ -532,7 +532,6 @@ const Homepage = ({ setProgress }) => {
 
             </ReactSimplyCarousel>
           </div>
-        </div>
       </section>
       <section className="dark-section">
         <div className="socials-content">

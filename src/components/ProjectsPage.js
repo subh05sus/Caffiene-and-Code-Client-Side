@@ -51,6 +51,9 @@ const ProjectsPage = ({setProgress}) => {
   const handleClosePopup = () => {
     setSelectedProject(null);
   };
+  const handleViewProject = () => {
+    window.open("google.com")
+  };
 
   return (
     <div className="projects-container">
@@ -133,9 +136,14 @@ const ProjectsPage = ({setProgress}) => {
           <div className="popup-content">
             <div className="popup-header">
               <h2>{selectedProject.projectName}</h2>
+              <div style={{display:"flex", flexDirection:"row", gap:"5px"}}>
+              <a className="view-btn" href={selectedProject.githubRepo}>
+                View Project
+              </a>
               <button className="close-btn" onClick={handleClosePopup}>
                 Close
               </button>
+              </div>
             </div>
             <div className="popup-body">
               <div
