@@ -613,13 +613,13 @@ const Homepage = ({ setProgress }) => {
             <p>
               Email:{" "}
               <a
-                href="mailto:info@phicsit.in"
+                href="mailto:support@phicsit.in"
                 style={{
                   textDecorationLine: "none",
                   color: "gray",
                 }}
               >
-                info@yourdomain.com
+                support@phicsit.in
               </a>
             </p>
           </div>
