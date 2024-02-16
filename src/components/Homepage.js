@@ -24,6 +24,7 @@ import Khushi from "./mentors/Khushi Goyal.jpg";
 import Krithik from "./mentors/Krithik D.jpg";
 import Namya from "./mentors/Namya Jain.jpg";
 import Nandani from "./mentors/Nandani Jindal.jpg";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const Homepage = ({ setProgress }) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -39,7 +40,7 @@ const Homepage = ({ setProgress }) => {
 
   const particlesLoaded = useCallback(async (container) => {}, []);
   return (
-    <div className="homepage-container">
+    <ParallaxProvider className="homepage-container">
       <section id="hero" className="main-dark-section">
         <Particles
           id="tsparticles"
@@ -124,29 +125,29 @@ const Homepage = ({ setProgress }) => {
             detectRetina: true,
           }}
         />
-        <div className="hero-content">
-          <h2>
-            <span className="hero-text">Caffeine and Code</span>
-          </h2>
-          <p>
-            <span className="cyan-text">Fueling Open Source Adventures</span>
-          </p>
-          <CountdownTimer />
+        <Parallax speed={-10}>
+          <div className="hero-content">
+            <h2>
+              <span className="hero-text">Caffeine and Code</span>
+            </h2>
+            <p>
+              <span className="cyan-text">Fueling Open Source Adventures</span>
+            </p>
+            <CountdownTimer />
 
-          <a
-            className="register-button"
-            style={{ marginTop: "20px" }}
-            href="https://caffeine-and-code.devfolio.co/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Register
-          </a>
-        </div>
+            <a
+              className="register-button"
+              style={{ marginTop: "20px" }}
+              href="https://caffeine-and-code.devfolio.co/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Register
+            </a>
+          </div>{" "}
+        </Parallax>
       </section>
-      <section>
-        <div className="button-container"></div>
-      </section>
+
 
       <section id="sponsor" className="light-section">
         <div className="sponsor-content">
@@ -202,7 +203,6 @@ const Homepage = ({ setProgress }) => {
             Have a look what we scheduled for you!
           </h4>
         </div>
-
         <ul className="timeline">
           <li>
             <div className="direction-r">
@@ -271,6 +271,7 @@ const Homepage = ({ setProgress }) => {
             </div>
           </li>
         </ul>
+
       </section>
       <section className="light-section">
         <div className="socials-content">
@@ -282,251 +283,241 @@ const Homepage = ({ setProgress }) => {
           >
             They share their knowledge and experience with aspiring developers.
           </p>
+        </div>
 
-          </div>
-
-
-          <div style={{ marginBottom: "20px", marginTop: "20px" }}>
-            <ReactSimplyCarousel
-              activeSlideIndex={activeSlideIndex}
-              onRequestChange={setActiveSlideIndex}
-              itemsToShow={1}
-              itemsToScroll={1}
-              forwardBtnProps={{
-                style: {
-                  alignSelf: "center",
-                  background: "black",
-                  border: "none",
-                  borderRadius: "50%",
-                  color: "white",
-                  cursor: "pointer",
-                  fontSize: "20px",
-                  height: 30,
-                  lineHeight: 1,
-                  textAlign: "center",
-                  width: 30,
-                },
-                children: <span>{`>`}</span>,
-              }}
-              backwardBtnProps={{
-                //here you can also pass className, or any other button element attributes
-                style: {
-                  alignSelf: "center",
-                  background: "black",
-                  border: "none",
-                  borderRadius: "50%",
-                  color: "white",
-                  cursor: "pointer",
-                  fontSize: "20px",
-                  height: 30,
-                  lineHeight: 1,
-                  textAlign: "center",
-                  width: 30,
-                },
-                children: <span>{`<`}</span>,
-              }}
-              responsiveProps={[
-                {
-                  itemsToShow: 5,
-                  itemsToScroll: 1,
-                  minWidth: 768,
-                  infinite: true,
-                },
-              ]}
-              speed={400}
-              easing="linear"
-            >
-
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+        <div style={{ marginBottom: "20px", marginTop: "20px" }}>
+          <ReactSimplyCarousel
+            activeSlideIndex={activeSlideIndex}
+            onRequestChange={setActiveSlideIndex}
+            itemsToShow={1}
+            itemsToScroll={1}
+            forwardBtnProps={{
+              style: {
+                alignSelf: "center",
+                background: "black",
+                border: "none",
+                borderRadius: "50%",
+                color: "white",
+                cursor: "pointer",
+                fontSize: "20px",
+                height: 30,
+                lineHeight: 1,
+                textAlign: "center",
+                width: 30,
+              },
+              children: <span>{`>`}</span>,
+            }}
+            backwardBtnProps={{
+              //here you can also pass className, or any other button element attributes
+              style: {
+                alignSelf: "center",
+                background: "black",
+                border: "none",
+                borderRadius: "50%",
+                color: "white",
+                cursor: "pointer",
+                fontSize: "20px",
+                height: 30,
+                lineHeight: 1,
+                textAlign: "center",
+                width: 30,
+              },
+              children: <span>{`<`}</span>,
+            }}
+            responsiveProps={[
+              {
+                itemsToShow: 5,
+                itemsToScroll: 1,
+                minWidth: 768,
+                infinite: true,
+              },
+            ]}
+            speed={400}
+            easing="linear"
+          >
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Ankita}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Ankita}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Ankita Mishra
-                  </div>
-                </CardSpotlightEffect>
-              </div>
+                  />
+                  Ankita Mishra
+                </div>
+              </CardSpotlightEffect>
+            </div>
 
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Himesh}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Himesh}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Himesh Parashar
-                  </div>
-                </CardSpotlightEffect>
-              </div>
+                  />
+                  Himesh Parashar
+                </div>
+              </CardSpotlightEffect>
+            </div>
 
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Ishita}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Ishita}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Ishita Raina
-                  </div>
-                </CardSpotlightEffect>
-              </div>
+                  />
+                  Ishita Raina
+                </div>
+              </CardSpotlightEffect>
+            </div>
 
-            
-
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Khushi}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Khushi}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Khushi Goyal
-                  </div>
-                </CardSpotlightEffect>
-              </div>
+                  />
+                  Khushi Goyal
+                </div>
+              </CardSpotlightEffect>
+            </div>
 
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Krithik}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Krithik}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Krithik D
-                  </div>
-                </CardSpotlightEffect>
-              </div>
+                  />
+                  Krithik D
+                </div>
+              </CardSpotlightEffect>
+            </div>
 
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Namya}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Namya}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Namya Jain
-                  </div>
-                </CardSpotlightEffect>
-              </div>
-              <div style={{ width: 200, height: 250, padding: 10 }}>
-                <CardSpotlightEffect style={{ margin: "10px" }}>
-                  <div
+                  />
+                  Namya Jain
+                </div>
+              </CardSpotlightEffect>
+            </div>
+            <div style={{ width: 200, height: 250, padding: 10 }}>
+              <CardSpotlightEffect style={{ margin: "10px" }}>
+                <div
+                  style={{
+                    width: 160,
+                    height: 210,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <img
+                    src={Nandani}
+                    alt=""
                     style={{
-                      width: 160,
-                      height: 210,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      flexDirection: "column",
+                      height: "100px",
+                      borderRadius: "50px",
                     }}
-                  >
-                    <img
-                      src={Nandani}
-                      alt=""
-                      style={{
-                        height: '100px',
-                        borderRadius:'50px'
-                      }}
-                    />
-                    Nandani Jindal
-                  </div>
-                </CardSpotlightEffect>
-              </div>
-
-            
-
-
-            </ReactSimplyCarousel>
-          </div>
-          <div className="socials-content">
-
+                  />
+                  Nandani Jindal
+                </div>
+              </CardSpotlightEffect>
+            </div>
+          </ReactSimplyCarousel>
+        </div>
+        <div className="socials-content">
           <a
             className="dark-tone"
             style={{ marginBottom: "20px", marginTop: "20px" }}
@@ -536,7 +527,7 @@ const Homepage = ({ setProgress }) => {
           >
             Become A Mentor
           </a>
-          </div>
+        </div>
       </section>
       <section className="dark-section">
         <div className="socials-content">
@@ -625,7 +616,7 @@ const Homepage = ({ setProgress }) => {
           </div>
         </div>
       </section>
-    </div>
+    </ParallaxProvider>
   );
 };
 
