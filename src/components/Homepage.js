@@ -125,7 +125,7 @@ const Homepage = ({ setProgress }) => {
             detectRetina: true,
           }}
         />
-        <Parallax speed={-10}>
+        <Parallax speed={-20}>
           <div className="hero-content">
             <h2>
               <span className="hero-text">Caffeine and Code</span>
